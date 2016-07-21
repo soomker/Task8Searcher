@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DbSearch">
+      <HintPath>..\..\DbSearch\DbSearch\bin\Debug\DbSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="ISearch">
+      <HintPath>..\..\ISearch\ISearch\bin\Debug\ISearch.dll</HintPath>
+    </Reference>
+    <Reference Include="SearchInFile">
+      <HintPath>..\..\SearchInFile\SearchInFile\bin\Debug\SearchInFile.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -44,8 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OwnSectionRead\SearchAssemColl.cs" />
+    <Compile Include="OwnSectionRead\SearchElement.cs" />
+    <Compile Include="OwnSectionRead\SearchProviderSection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
