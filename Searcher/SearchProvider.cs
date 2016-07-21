@@ -42,7 +42,15 @@ namespace Searcher
                     Console.WriteLine("Can't create a search object " + searchSection.AssemblyColl[i].SearchClass + " From Assembly" + searchSection.AssemblyColl[i].AssemblyName);
                     return;
                 }
-                result = (string)t.GetMethod("Search").Invoke(searchObject, new object [2] {findTarget, searchSection.AssemblyColl[i].Param});
+                try
+                {
+                    result = (string)t.GetMethod("Search").Invoke(searchObject, new object[2] { findTarget, searchSection.AssemblyColl[i].Param });
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Can't call method Search. Maybe "+ searchSection.AssemblyColl[i].SearchClass + " don't support a ISearch interface ");
+                    continue;
+                }
             }
             if (String.IsNullOrEmpty(result))
             {
